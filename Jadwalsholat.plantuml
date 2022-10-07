@@ -1,0 +1,37 @@
+@startuml
+
+interface DataModel {
+    +
+    +{abstract} setRequest(request)
+    +{abstract} getResponse()
+}
+
+class Tanggal {
+    -request
+    -response
+    -setResponse(response)
+    -requestProcess()
+}
+
+class Lokasi{
+    -request
+    -response
+    -url
+    -setResponse(response)
+    -requestProcess()
+}
+
+class Core {
+    -baseurl
+    -lokasi
+    -tanggal
+    -process(lokasi, tanggal)
+    +getData()
+}
+
+Core -- Tanggal
+Core -- Lokasi
+Lokasi ..|> DataModel
+Tanggal ..|> DataModel
+
+@enduml
