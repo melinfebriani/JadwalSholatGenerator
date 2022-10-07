@@ -1,7 +1,6 @@
 @startuml
 
 interface DataModel {
-    +
     +{abstract} setRequest(request)
     +{abstract} getResponse()
 }
